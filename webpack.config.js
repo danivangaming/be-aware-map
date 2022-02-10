@@ -4,7 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.ts',
+    entry: {
+        elevator: './src/elevator.ts',
+        map: './src/map.ts',
+        level1: './src/level1.ts',
+        level2: './src/level2.ts',
+        level3: './src/level3.ts',
+        level5: './src/level5.ts'
+    },
     devtool: 'inline-source-map',
     devServer: {
         static: ['.'],
@@ -28,11 +35,11 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: 'script.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './'),
+        filename: 'Scripts/[name].js',
         publicPath: '/'
     },
     /*externals:[
