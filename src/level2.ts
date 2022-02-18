@@ -20,8 +20,8 @@ WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
     WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+ data+ "CurrentLevel: "+ elevator.getCurrentLevel() )
-  }
-})
+  },
+});
 
 /**
  * true = german, false = english or else
