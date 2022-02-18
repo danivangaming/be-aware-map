@@ -15,6 +15,13 @@ let currentTriggerMessage: any = undefined;
 let pickedUp: boolean = false;
 let usbQuest: boolean = false;
 
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
+
 /**
  * true = german, false = english or else
  */
@@ -345,8 +352,10 @@ function questMatch(quest: string) {
     WA.state.loadVariable("quest_2_2") &&
     WA.state.loadVariable("quest_2_3")
   ) {
-    elevator.setMaxLevelAvailable(3);
-    elevator.increaseMaxLevelAvailable();
+    if ((elevator.getHighestLevel() + 1) === (elevator.getCurrentLevel() + 1)) {
+      elevator.increaseMaxLevelAvailable();
+      WA.state.getLocalStorageData("setMaxLevelAvailable", String(elevator.getHighestLevel()));
+    } 
   }
 }
 
