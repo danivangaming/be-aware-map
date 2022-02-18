@@ -12,7 +12,7 @@ let currentItem: any = undefined;
 let currentTriggerMessage: any = undefined;
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "level",
+  id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
   }

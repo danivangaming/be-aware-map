@@ -15,7 +15,7 @@ let mail_2_quest_done = false;
 let mail_3_quest_done = false;
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "level",
+  id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
   }
