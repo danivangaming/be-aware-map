@@ -20,7 +20,7 @@ WA.room.setProperty("exit", "exitUrl", "Level1.json");
 elevator.setCurrentLevel("Level1.json");
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "level",
+  id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
     WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ data+ "CurrentLevel: "+ elevator.getCurrentLevel() )
