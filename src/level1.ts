@@ -19,6 +19,13 @@ WA.room.hideLayer("Kylo_Highlight");
 WA.room.setProperty("exit", "exitUrl", "Level1.json");
 elevator.setCurrentLevel("Level1.json");
 
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
+
 /**
  * true = german, false = english or else
  */
@@ -208,7 +215,10 @@ function questMatch(quest: string) {
     WA.state.loadVariable("quest_1_2") &&
     WA.state.loadVariable("quest_1_3")
   ) {
-    elevator.increaseMaxLevelAvailable();
+    if ((elevator.getHighestLevel() + 1) === (elevator.getCurrentLevel() + 1)) {
+      elevator.increaseMaxLevelAvailable();
+      WA.state.getLocalStorageData("setMaxLevelAvailable", String(elevator.getHighestLevel()));
+    } 
   }
 }
 

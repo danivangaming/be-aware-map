@@ -14,6 +14,13 @@ let mail_1_quest_done = false;
 let mail_2_quest_done = false;
 let mail_3_quest_done = false;
 
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
+
 /**
  * true = german, false = english or else
  */
@@ -232,8 +239,10 @@ function questMatch(quest: string) {
     WA.state.loadVariable("quest_3_2") &&
     WA.state.loadVariable("quest_3_3")
   ) {
-    elevator.setMaxLevelAvailable(4);
-    elevator.increaseMaxLevelAvailable();
+    if ((elevator.getHighestLevel() + 1) === (elevator.getCurrentLevel() + 1)) {
+      elevator.increaseMaxLevelAvailable();
+      WA.state.getLocalStorageData("setMaxLevelAvailable", String(elevator.getHighestLevel()));
+    } 
   }
 }
 

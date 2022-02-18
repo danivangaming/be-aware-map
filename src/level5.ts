@@ -11,6 +11,13 @@ bootstrapExtra().catch((e) => console.error(e));
 let currentItem: any = undefined;
 let currentTriggerMessage: any = undefined;
 
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
+
 WA.state.getLocalStorageData("getLanguage", "", {
   id: "language",
   callback: (data) => {
