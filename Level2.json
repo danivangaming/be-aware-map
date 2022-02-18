@@ -1490,6 +1490,17 @@
                  "width":0,
                  "x":418.5,
                  "y":197
+                }, 
+                {
+                 "height":33.5,
+                 "id":20,
+                 "name":"popUp_Elevator",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":66,
+                 "x":767.5,
+                 "y":353.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1640,7 +1651,7 @@
          "y":0
         }],
  "nextlayerid":153,
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -1649,7 +1660,7 @@
          "value":"Scripts\/level2.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.0",
  "tileheight":32,
  "tilesets":[
         {
@@ -2031,6 +2042,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":50
 }
