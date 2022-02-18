@@ -23,9 +23,10 @@ WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
-    WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ data+ "CurrentLevel: "+ elevator.getCurrentLevel() )
   },
 });
+
+WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
 
 /**
  * true = german, false = english or else
