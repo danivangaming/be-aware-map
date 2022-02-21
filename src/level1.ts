@@ -23,7 +23,7 @@ let highestLevel: Number = 0;
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   id: "language",
   callback: (data) => {
-    elevator.setMaxLevelAvailable(Number(data));
+    // elevator.setMaxLevelAvailable(Number(data));
     highestLevel = Number(data);
   },
 });
