@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { TextFilesGerman } from "../Scripts/TextFilesGerman";
 import { TextFilesEnglish } from "../Scripts/TextFilesEnglish";
-import { elevator } from "./elevator";
+import { elevator } from "../src/elevator";
 
 bootstrapExtra().catch((e) => console.error(e));
 
@@ -28,7 +28,7 @@ WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   },
 });
 
-WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ highestLevel+ "CurrentLevel: "+ elevator.getCurrentLevel() )
+WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+  elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
 
 /**
  * true = german, false = english or else
