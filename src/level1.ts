@@ -18,15 +18,17 @@ WA.room.hideLayer("Paper_Highlight");
 WA.room.hideLayer("Kylo_Highlight");
 WA.room.setProperty("exit", "exitUrl", "Level1.json");
 elevator.setCurrentLevel("Level1.json");
+let highestLevel: Number = 0;
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
+    highestLevel = Number(data);
   },
 });
 
-WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
+WA.ui.openBubble("popUp_Elevator", "sheesh MaxLevelAvailable: "+ highestLevel+ "CurrentLevel: "+ elevator.getCurrentLevel() )
 
 /**
  * true = german, false = english or else
