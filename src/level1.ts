@@ -23,7 +23,7 @@ let highestLevel: Number = 0;
 /**
  * true = german, false = english or else
  */
-WA.state.getLocalStorageData("getLanguage", "", undefined, {
+WA.state.getLocalStorageData("getLanguage", "", {
   id: "language",
   callback: (data) => {
     if (data === "german") {
@@ -34,7 +34,7 @@ WA.state.getLocalStorageData("getLanguage", "", undefined, {
   },
 });
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
   id: "level",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));

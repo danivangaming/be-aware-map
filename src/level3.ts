@@ -17,7 +17,7 @@ let mail_3_quest_done = false;
 /**
  * true = german, false = english or else
  */
-WA.state.getLocalStorageData("getLanguage", "", undefined, {
+WA.state.getLocalStorageData("getLanguage", "", {
   id: "language",
   callback: (data) => {
     if (data === "german") {
@@ -28,7 +28,7 @@ WA.state.getLocalStorageData("getLanguage", "", undefined, {
   },
 });
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
   id: "language",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
