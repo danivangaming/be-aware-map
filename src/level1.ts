@@ -41,7 +41,6 @@ WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
   },
 });
 
-WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+ elevator.getHighestLevel() + "CurrentLevel: "+ elevator.getCurrentLevel())
 
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({
