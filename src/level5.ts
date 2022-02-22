@@ -11,13 +11,6 @@ bootstrapExtra().catch((e) => console.error(e));
 let currentItem: any = undefined;
 let currentTriggerMessage: any = undefined;
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "language",
-  callback: (data) => {
-    elevator.setMaxLevelAvailable(Number(data));
-  }
-})
-
 WA.state.getLocalStorageData("getLanguage", "", {
   id: "language",
   callback: (data) => {
@@ -28,6 +21,13 @@ WA.state.getLocalStorageData("getLanguage", "", {
     }
   },
 });
+
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "language",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
 
 WA.room.setProperty("exit", "exitUrl", "Level5.json");
 elevator.setCurrentLevel("Level5.json");

@@ -29,6 +29,13 @@ WA.state.getLocalStorageData("getLanguage", "", {
   },
 });
 
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  },
+});
+
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({
     message: TextFiles.elevator_interact_message,
