@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { TextFilesGerman } from "../Scripts/TextFilesGerman";
 import { TextFilesEnglish } from "../Scripts/TextFilesEnglish";
-import { elevator } from "../src/elevator";
+import { elevator } from "./elevator";
 
 bootstrapExtra().catch((e) => console.error(e));
 
@@ -21,28 +21,25 @@ elevator.setCurrentLevel("Level1.json");
 let highestLevel: Number = 0;
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "language",
+  id: "level",
   callback: (data) => {
-    // elevator.setMaxLevelAvailable(Number(data));
-    highestLevel = Number(data);
+    WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+  data+ "CurrentLevel: "+ elevator.getCurrentLevel() )
   },
 });
-
-WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+  elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
 
 /**
  * true = german, false = english or else
  */
-WA.state.getLocalStorageData("getLanguage", "", {
-  id: "language",
-  callback: (data) => {
-    if (data === "german") {
-      TextFiles = TextFilesGerman;
-    } else if (data === "english") {
-      TextFiles = TextFilesEnglish;
-    }
-  },
-});
+// WA.state.getLocalStorageData("getLanguage", "", {
+//   id: "language",
+//   callback: (data) => {
+//     if (data === "german") {
+//       TextFiles = TextFilesGerman;
+//     } else if (data === "english") {
+//       TextFiles = TextFilesEnglish;
+//     }
+//   },
+// });
 
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({
