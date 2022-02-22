@@ -5,7 +5,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { TextFilesGerman } from "../Scripts/TextFilesGerman";
 import { TextFilesEnglish } from "../Scripts/TextFilesEnglish";
-import { elevator } from "../src/elevator";
+import { elevator } from "./elevator";
 
 bootstrapExtra().catch((e) => console.error(e));
 
