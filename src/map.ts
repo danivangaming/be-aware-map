@@ -29,7 +29,7 @@ WA.state.getLocalStorageData("getLanguage", "", {
   },
 });
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
   id: "level",
   callback: (data) => {
     if (data) {

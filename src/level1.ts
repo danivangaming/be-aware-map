@@ -23,7 +23,7 @@ let highestLevel: Number = 0;
 /**
  * true = german, false = english or else
  */
-WA.state.getLocalStorageData("getLanguage", "", {
+WA.state.getLocalStorageData("getLanguage", "", undefined, {
   id: "language",
   callback: (data) => {
     if (data === "german") {
