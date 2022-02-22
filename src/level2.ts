@@ -17,15 +17,6 @@ let usbQuest: boolean = false;
 WA.room.setProperty("exit", "exitUrl", "Level2.json");
 elevator.setCurrentLevel("Level2.json");
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "language",
-  callback: (data) => {
-    elevator.setMaxLevelAvailable(Number(data));
-  },
-});
-
-WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+ elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
-
 /**
  * true = german, false = english or else
  */
@@ -39,6 +30,15 @@ WA.state.getLocalStorageData("getLanguage", "", {
     }
   },
 });
+
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "language",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  },
+});
+
+WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+ elevator.getHighestLevel()+ "CurrentLevel: "+ elevator.getCurrentLevel() )
 
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({

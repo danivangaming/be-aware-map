@@ -14,13 +14,6 @@ let mail_1_quest_done = false;
 let mail_2_quest_done = false;
 let mail_3_quest_done = false;
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "language",
-  callback: (data) => {
-    elevator.setMaxLevelAvailable(Number(data));
-  }
-})
-
 /**
  * true = german, false = english or else
  */
@@ -34,6 +27,13 @@ WA.state.getLocalStorageData("getLanguage", "", {
     }
   },
 });
+
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "language",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  }
+})
 
 WA.room.setProperty("exit", "exitUrl", "Level5.json");
 elevator.setCurrentLevel("Level3.json");

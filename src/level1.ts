@@ -20,26 +20,28 @@ WA.room.setProperty("exit", "exitUrl", "Level1.json");
 elevator.setCurrentLevel("Level1.json");
 let highestLevel: Number = 0;
 
-WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
-  id: "level",
-  callback: (data) => {
-    WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+  data+ "CurrentLevel: "+ elevator.getCurrentLevel() )
-  },
-});
-
 /**
  * true = german, false = english or else
  */
-// WA.state.getLocalStorageData("getLanguage", "", {
-//   id: "language",
-//   callback: (data) => {
-//     if (data === "german") {
-//       TextFiles = TextFilesGerman;
-//     } else if (data === "english") {
-//       TextFiles = TextFilesEnglish;
-//     }
-//   },
-// });
+WA.state.getLocalStorageData("getLanguage", "", {
+  id: "language",
+  callback: (data) => {
+    if (data === "german") {
+      TextFiles = TextFilesGerman;
+    } else if (data === "english") {
+      TextFiles = TextFilesEnglish;
+    }
+  },
+});
+
+WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
+  id: "level",
+  callback: (data) => {
+    elevator.setMaxLevelAvailable(Number(data));
+  },
+});
+
+WA.ui.openBubble("popUp_Elevator", "MaxLevelAvailable: "+ elevator.getHighestLevel() + "CurrentLevel: "+ elevator.getCurrentLevel())
 
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({
