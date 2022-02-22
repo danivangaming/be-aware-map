@@ -32,7 +32,9 @@ WA.state.getLocalStorageData("getLanguage", "", {
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", {
   id: "level",
   callback: (data) => {
-    elevator.setMaxLevelAvailable(Number(data));
+    if (data) {
+      elevator.setMaxLevelAvailable(Number(data));
+    }
   },
 });
 
