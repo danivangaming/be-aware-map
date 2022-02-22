@@ -11,7 +11,7 @@ bootstrapExtra().catch((e) => console.error(e));
 let currentItem: any = undefined;
 let currentTriggerMessage: any = undefined;
 
-WA.state.getLocalStorageData("getLanguage", "", {
+WA.state.getLocalStorageData("getLanguage", "", undefined, {
   id: "language",
   callback: (data) => {
     if (data === "german") {
