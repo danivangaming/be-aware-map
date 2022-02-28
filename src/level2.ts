@@ -16,6 +16,7 @@ let pickedUp: boolean = false;
 let usbQuest: boolean = false;
 WA.room.setProperty("exit", "exitUrl", "Level2.json");
 elevator.setCurrentLevel("Level2.json");
+elevator.setMaxLevelAvailable(3);
 
 /**
  * true = german, false = english or else
@@ -32,7 +33,7 @@ WA.state.getLocalStorageData("getLanguage", "", {
 });
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
-  id: "language",
+  id: "level",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
   },

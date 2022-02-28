@@ -13,6 +13,7 @@ let currentTriggerMessage: any = undefined;
 let mail_1_quest_done = false;
 let mail_2_quest_done = false;
 let mail_3_quest_done = false;
+elevator.setMaxLevelAvailable(4);
 
 /**
  * true = german, false = english or else
@@ -29,7 +30,7 @@ WA.state.getLocalStorageData("getLanguage", "", {
 });
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
-  id: "language",
+  id: "level",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
   }
