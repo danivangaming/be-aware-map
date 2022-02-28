@@ -18,7 +18,7 @@ WA.room.hideLayer("Paper_Highlight");
 WA.room.hideLayer("Kylo_Highlight");
 WA.room.setProperty("exit", "exitUrl", "Level1.json");
 elevator.setCurrentLevel("Level1.json");
-let highestLevel: Number = 0;
+elevator.setMaxLevelAvailable(2);
 
 /**
  * true = german, false = english or else

@@ -10,6 +10,7 @@ let TextFiles: any = TextFilesGerman;
 bootstrapExtra().catch((e) => console.error(e));
 let currentItem: any = undefined;
 let currentTriggerMessage: any = undefined;
+elevator.setMaxLevelAvailable(5);
 
 WA.state.getLocalStorageData("getLanguage", "", {
   id: "language",
@@ -23,7 +24,7 @@ WA.state.getLocalStorageData("getLanguage", "", {
 });
 
 WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
-  id: "language",
+  id: "level",
   callback: (data) => {
     elevator.setMaxLevelAvailable(Number(data));
   }
