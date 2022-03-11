@@ -639,6 +639,17 @@
                  "width":0,
                  "x":799.666666666667,
                  "y":118.333333333333
+                }, 
+                {
+                 "height":23,
+                 "id":4,
+                 "name":"popUp_elevator",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":61.5,
+                 "x":769.5,
+                 "y":50.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -683,7 +694,7 @@
          "y":0
         }],
  "nextlayerid":72,
- "nextobjectid":4,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -692,7 +703,7 @@
          "value":"Scripts\/level5.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -1190,6 +1201,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":50
 }

@@ -1002,6 +1002,17 @@
                  "width":126,
                  "x":906.666666666667,
                  "y":1314.66666666667
+                }, 
+                {
+                 "height":24,
+                 "id":27,
+                 "name":"popUp_elevator",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":61,
+                 "x":801,
+                 "y":882.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1046,7 +1057,7 @@
          "y":0
         }],
  "nextlayerid":105,
- "nextobjectid":27,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -1055,7 +1066,7 @@
          "value":"Scripts\/map.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -2374,6 +2385,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":50
 }

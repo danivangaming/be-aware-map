@@ -1503,15 +1503,15 @@
                  "y":1377
                 }, 
                 {
-                 "height":34.5,
+                 "height":24.5,
                  "id":7,
-                 "name":"popUp_Elevator",
+                 "name":"popUp_elevator",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":80,
-                 "x":1238.5,
-                 "y":680
+                 "width":63.3333333333333,
+                 "x":1248.5,
+                 "y":688.666666666667
                 }, 
                 {
                  "height":98,
@@ -1738,7 +1738,7 @@
          "value":"Scripts\/level1.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -2225,6 +2225,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":50
 }
