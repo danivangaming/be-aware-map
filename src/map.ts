@@ -38,14 +38,11 @@ WA.state.getLocalStorageData("getMaxLevelAvailable", "", undefined, {
   },
 });
 
-let elevatorPopUp = WA.ui.openPopup("popUp_elevator", elevator.getCurrentLevelJson(), []);
-
 WA.room.onEnterZone("interact_down", () => {
   currentTriggerMessage = WA.ui.displayActionMessage({
     message: TextFiles.elevator_interact_message,
     callback: () => {
       WA.room.setProperty("exit", "exitUrl", elevator.setLevelDown());
-      elevatorPopUp = WA.ui.openPopup("popUp_elevator", elevator.getCurrentLevelJson(), []);
     },
   });
 });
@@ -57,7 +54,6 @@ WA.room.onEnterZone("interact_up", () => {
     message: TextFiles.elevator_interact_message,
     callback: () => {
       WA.room.setProperty("exit", "exitUrl", elevator.setLevelUp());
-      elevatorPopUp = WA.ui.openPopup("popUp_elevator", elevator.getCurrentLevelJson(), []);
     },
   });
 });
